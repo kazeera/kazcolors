@@ -1,0 +1,13 @@
+Package: kazcolors
+Title: Colour functions for consistent colors in R.
+Version: 0.0.0.9000
+Authors@R: person("Kazeera", "Aliar", , "kazeeraaliar@gmail.com", role = c("aut", "cre"))
+Description: This package contains 3 functions that retrieve colors for a named vector based on a color palette or gradient,
+  both of which can also be acquired using this package.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports:
+  RColorBrewer
