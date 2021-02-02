@@ -9,39 +9,38 @@
 #' @examples
 #' # Make a color palette of red to blue (RColorBrewer)
 #' # The two lines of code below are equivalent
-#' get_col_palette(brew_pal="RdBu")
+#' get_col_palette(brew_pal = "RdBu")
 #' colorRampPalette(RColorBrewer::brewer.pal(9, "RdBu"))
 #' #' # Reverse the palette (i.e. blue to red)
-#' get_col_palette(brew_pal="RdBu", rev=T)
+#' get_col_palette(brew_pal = "RdBu", rev = T)
 #'
 #' # Make a custom color palette of forestgreen to darkorchid4 (RColorBrewer)
 #' # The two lines of code below are equivalent
-#' get_col_palette(custom=c("forestgreen", "darkorchid4"))
+#' get_col_palette(custom = c("forestgreen", "darkorchid4"))
 #' colorRampPalette(c("forestgreen", "darkorchid4"))
-#'
 #' @seealso colorRampPalette function from {grDevices}. See ?colorRampPalette.
 #' @return A colorRampPalette color interpolation functions.
 #' @export
-get_col_palette <- function(brew_pal=NA, custom=NA, rev=F){
+get_col_palette <- function(brew_pal = NA, custom = NA, rev = F) {
   # If colors for palette aren't specified, return warning message
-  if(is.na(brew_pal) & is.na(custom)){
+  if (is.na(brew_pal) & is.na(custom)) {
     stop("Please specify either 'brew_pal' or 'custom'.")
   }
 
   # Get custom palette based on vector of colors
-  if(!is.na(custom)) {
-    colorRampPalette(custom)    #c(low_col, high_col))
+  if (!is.na(custom)) {
+    colorRampPalette(custom) # c(low_col, high_col))
   }
 
   # Get RColorBrewer palette
-  if(!is.na(brew_pal)){
+  if (!is.na(brew_pal)) {
     # Get max colors of palette
-    max_n <- brewer.pal.info$maxcolors[grep(brew_pal, rownames(brewer.pal.info))]
+    max_n <- brewer.pal.info[brew_pal, "maxcolors"]
     # Create brewer pal
     # Reverse if required
-    if(rev){
+    if (rev) {
       brew <- rev(brewer.pal(n = max_n, name = brew_pal))
-    }else{
+    } else {
       brew <- brewer.pal(n = max_n, name = brew_pal)
     }
     # Return palette
