@@ -24,17 +24,16 @@ Only one of the parameters (brew_pal or custom) must be specified (not NA), othe
 }
 \examples{
 # Make a color palette of red to blue (RColorBrewer)
-# The two lines of code below are equivalent 
-get_col_palette(brew_pal="RdBu")
+# The two lines of code below are equivalent
+get_col_palette(brew_pal = "RdBu")
 colorRampPalette(RColorBrewer::brewer.pal(9, "RdBu"))
 #' # Reverse the palette (i.e. blue to red)
-get_col_palette(brew_pal="RdBu", rev=T)
+get_col_palette(brew_pal = "RdBu", rev = T)
 
 # Make a custom color palette of forestgreen to darkorchid4 (RColorBrewer)
-# The two lines of code below are equivalent 
-get_col_palette(custom=c("forestgreen", "darkorchid4"))
+# The two lines of code below are equivalent
+get_col_palette(custom = c("forestgreen", "darkorchid4"))
 colorRampPalette(c("forestgreen", "darkorchid4"))
-
 }
 \seealso{
 colorRampPalette function from {grDevices}. See ?colorRampPalette.
