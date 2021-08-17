@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of kazcolors is to ...
+The goal of kazcolors is to quickly acquire color vectors (named palettes and colors for heatmaps/correlations/any scaled values) via the RColorBrewer package and colorRampPalette function. 
 
 ## Installation
 You can install the latest version from Github:
